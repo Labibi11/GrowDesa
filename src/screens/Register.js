@@ -35,14 +35,9 @@ export default function Register() {
             marginTop: 20,
           }}
         >
-          <Text style={{ opacity: 0.5, fontSize: 13 }}>Sudah punya akun?</Text>
-          <TouchableOpacity>
-            <Text
-              style={{ color: '#018129', fontSize: 13 }}
-              onPress={() => navigation.navigate('Login')}
-            >
-              Login
-            </Text>
+          <Text style={styles.textQs}>Sudah punya akun?</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+            <Text style={styles.textLgn}>Login</Text>
           </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.button}>
@@ -79,6 +74,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     elevation: 5,
     backgroundColor: '#fff',
+  },
+  textQs: {
+    opacity: 0.5,
+    fontSize: 13,
+  },
+  textLgn: {
+    color: '#018129',
+    fontSize: 13,
   },
   button: {
     backgroundColor: '#018129',

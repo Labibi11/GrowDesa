@@ -14,7 +14,7 @@ import { useNavigation } from '@react-navigation/native';
 export default function Home() {
   const navigation = useNavigation();
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <ImageHeader />
       <View style={styles.containerPrd}>
         <Text style={styles.textNewPrd}>Produk Terbaru</Text>
@@ -156,7 +156,7 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   container: {
-    color: '#018129',
+    backgroundColor: 'white',
     fontSize: 13,
   },
   containerPrd: {
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     marginTop: -15,
   },
   textNewPrd: {
-    fontWeight: 'bold',
+    fontWeight: '500',
     fontSize: 18,
   },
   textViewMore: {
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
   textNewFrm: {
     fontSize: 18,
     marginBottom: 20,
-    fontWeight: 'bold',
+    fontWeight: '500',
   },
   containerCardFrm: {
     marginBottom: 20,

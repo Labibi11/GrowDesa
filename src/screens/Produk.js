@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import SearchIcon from '../assets/Icon_search.png';
 import produk from '../assets/Produk_1.png';
