@@ -66,54 +66,6 @@ function MyTabs() {
         }}
       />
 
-      {/* Tombol Tengah - Buat Surat */}
-      <Tab.Screen
-        name="BuatSurat"
-        component={BuatSurat} // Ganti dengan komponen yang sesuai
-        options={{
-          tabBarLabel: '',
-          tabBarIcon: ({ focused }) => (
-            <View
-              style={{
-                position: 'absolute',
-                bottom: 20, // Mengangkat tombol ke atas
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <View
-                style={{
-                  width: 60,
-                  height: 60,
-                  borderRadius: 30,
-                  backgroundColor: '#018129',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  shadowColor: '#000',
-                  shadowOffset: {
-                    width: 0,
-                    height: 4,
-                  },
-                  shadowOpacity: 0.3,
-                  shadowRadius: 4.65,
-                  elevation: 8,
-                }}
-              >
-                <Image
-                  source={Logo}
-                  style={{
-                    width: 35,
-                    height: 35,
-                    tintColor: 'white',
-                  }}
-                  resizeMode="contain"
-                />
-              </View>
-            </View>
-          ),
-        }}
-      />
-
       <Tab.Screen
         name="Belanja"
         component={Produk}
