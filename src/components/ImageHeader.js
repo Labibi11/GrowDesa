@@ -9,9 +9,9 @@ function ImageHeader() {
   const scrollViewRef = useRef(null);
 
   const images = [
-    require('./../assets/kamar.jpg'),
-    require('./../assets/kamar.jpg'),
-    require('./../assets/kamar.jpg'),
+    require('./../assets/iklan.png'),
+    require('./../assets/iklan.png'),
+    require('./../assets/iklan.png'),
   ];
   useEffect(() => {
     let scrollPosition = 0;
@@ -46,12 +46,12 @@ function ImageHeader() {
         <View
           key={index}
           style={{
-            height: height * 0.25, // Atur tinggi sesuai kebutuhan
+            height: height * 0.18, // Atur tinggi sesuai kebutuhan
           }}
         >
           <Image
             style={{
-              height: height * 0.25, // Atur tinggi sesuai kebutuhan,
+              height: height * 0.18, // Atur tinggi sesuai kebutuhan,
               width: width,
             }}
             source={image}

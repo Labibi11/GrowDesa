@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import Background from '../components/Background';
 import ImageGD from '../assets/logo_gd.png';
+import TakalarLG from '../assets/Lambang_Kabupaten_Takalar.png';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Register() {
@@ -15,34 +16,48 @@ export default function Register() {
   return (
     <Background>
       <View style={styles.container}>
-        <Image source={ImageGD} style={styles.logo} />
+        {/* 2 Logo Horizontal */}
+        <View style={styles.containerLG}>
+          <Image source={ImageGD} style={styles.imageGD} resizeMode="contain" />
+          <Image
+            source={TakalarLG}
+            style={styles.imageTKL}
+            resizeMode="contain"
+          />
+        </View>
+
         <Text style={styles.text}>Username</Text>
         <TextInput placeholder="Masukkan Username" style={styles.input} />
         <Text style={styles.text}>Email</Text>
-        <TextInput placeholder="Masukkan Alamat Email" style={styles.input} />
+        <TextInput
+          placeholder="Masukkan Alamat Email"
+          style={styles.input}
+          keyboardType="email-address"
+          autoCapitalize="none"
+        />
         <Text style={styles.text}>Password</Text>
-        <TextInput placeholder="Masukkan Password" style={styles.input} />
+        <TextInput
+          placeholder="Masukkan Password"
+          style={styles.input}
+          secureTextEntry
+        />
         <Text style={styles.text}>Konfirmasi Password</Text>
         <TextInput
           placeholder="Masukkan Konfirmasi Password"
           style={styles.input}
-        />{' '}
-        <View
-          style={{
-            flexDirection: 'row',
-            alignContent: 'center',
-            justifyContent: 'center',
-            marginTop: 20,
-          }}
-        >
-          <Text style={styles.textQs}>Sudah punya akun?</Text>
+          secureTextEntry
+        />
+
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.textBtn}>Register</Text>
+        </TouchableOpacity>
+
+        <View style={styles.containerQs}>
+          <Text style={styles.textQs}>Sudah punya akun? </Text>
           <TouchableOpacity onPress={() => navigation.navigate('Login')}>
             <Text style={styles.textLgn}>Login</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.button}>
-          <Text style={{ color: '#fff' }}>Register</Text>
-        </TouchableOpacity>
       </View>
     </Background>
   );
@@ -52,18 +67,28 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '80%',
+    justifyContent: 'center',
   },
-  logo: {
-    width: 200,
-    height: 200,
-    margin: 30,
-    display: 'flex',
-    alignSelf: 'center',
+  containerLG: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 20,
+    marginBottom: 20,
+  },
+  imageGD: {
+    width: 110,
+    height: 110,
+  },
+  imageTKL: {
+    width: 90,
+    height: 110,
   },
   text: {
     fontWeight: 'bold',
     fontSize: 15,
     color: '#333',
+    marginBottom: 5,
   },
   input: {
     borderWidth: 1.5,
@@ -75,6 +100,12 @@ const styles = StyleSheet.create({
     elevation: 5,
     backgroundColor: '#fff',
   },
+  containerQs: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 16,
+  },
   textQs: {
     opacity: 0.5,
     fontSize: 13,
@@ -82,13 +113,19 @@ const styles = StyleSheet.create({
   textLgn: {
     color: '#018129',
     fontSize: 13,
+    fontWeight: 'bold',
   },
   button: {
     backgroundColor: '#018129',
-    padding: 10,
+    padding: 14,
     borderRadius: 10,
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 10,
     elevation: 5,
+  },
+  textBtn: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 15,
   },
 });

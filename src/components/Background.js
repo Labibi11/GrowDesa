@@ -6,7 +6,6 @@ function Background({ children }) {
       colors={['#fff', '#fff', '#018109']}
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
     >
-      {' '}
       {children}
     </LinearGradient>
   );
